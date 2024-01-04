@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Include Bootstrap stylesheet -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Filter Employee</title>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Filter Employee </h1>
+        <hr>
+        <form method="post" action="filter_emp">
+          {% csrf_token %}
+          
+          <label for="name">Employee First Name/Last Name</label><br>
+          <input type="text" id="name" name="name" value="{{name}}" ><br>
+        
+          
+          <label for="role">Role:</label><br>
+          <input type="text" id="role" name="role" value="{{role}}" ><br>
+        
+          <label for="dept">Department:</label><br>
+          <input type="text" id="dept" name="dept" value="{{dept}}" ><br>
+        
+         
+        
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+    
+        </hr>
+    </div>
+
+    <!-- Include Bootstrap scripts (jQuery and Popper.js are required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

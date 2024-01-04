@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include Bootstrap stylesheet -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>Remove Employee</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Remove Employee</h1>
+      <hr>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu" aria-expanded="false">
+          Choose Employee to be Removed
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          {% for emp in emps %}
+          <li><a class="dropdown-item" href="/remove_emp/{{emp.id}}">{{ emp.first_name }} {{emp.last_name}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <hr>  
+    </div>
+
+    <!-- Include Bootstrap scripts (jQuery and Popper.js are required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Initialize the dropdown -->
+    <script>
+      $(document).ready(function() {
+        $('.dropdown-toggle').dropdown();
+      });
+    </script>
+  </body>
+</html>

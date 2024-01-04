@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Include Bootstrap stylesheet -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Add an Employee</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Add an Employee</h1>
+    <hr>
+
+    <form method="post" action="{% url 'add_emp' %}">
+      {% csrf_token %}
+      
+      <label for="first_name">First Name:</label><br>
+      <input type="text" id="first_name" name="first_name" value="{{first_name}}" required><br>
+    
+      <label for="last_name">Last Name:</label><br>
+      <input type="text" id="last_name" name="last_name" value="{{last_name}}" required><br>
+    
+      <label for="salary">Salary:</label><br>
+      <input type="number" id="salary" name="salary" value="{{salary}}" required><br>
+    
+      <label for="bonus">Bonus:</label><br>
+      <input type="number" id="bonus" name="bonus" value="{{bonus}}" required><br>
+    
+      <label for="phone">Phone:</label><br>
+      <input type="number" id="phone" name="phone" value="{{phone}}" required><br>
+    
+      <label for="role">Role:</label><br>
+      <input type="text" id="role" name="role" value="{{role}}" required><br>
+    
+      <label for="dept">Department:</label><br>
+      <input type="text" id="dept" name="dept" value="{{dept}}" required><br>
+    
+      <label for="hire_date">Hier Date:</label><br>
+      <input type="date" id="hire_date" name="hire_date" value="{{hire_date}}" required><br>
+    
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+
+    <!-- Include Bootstrap scripts (jQuery and Popper.js are required for Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </div>
+</body>
+</html>
